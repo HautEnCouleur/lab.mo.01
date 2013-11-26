@@ -1,0 +1,344 @@
+/*
+Theme Name: hec lab 0.1
+Theme URI: http://lab.hautencouleur.fr/wp/
+Author: haut en couleur
+Author URI: http://hautencouleur.com
+Description: 
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hec.lab
+template: twentythirteen
+
+*/
+
+@import url("../twentythirteen/style.css");
+
+/* font-family: 'Lato', sans-serif; */
+
+/* font-family: 'Lobster', cursive; */
+
+/* font-family: 'Open Sans', sans-serif; */
+
+
+.center{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+
+
+.error404 .page-title{
+	padding: 50px;
+}
+
+.error404 .page-title:before{
+	position: absolute;
+	top: 28px;
+	left: 7px;
+	overflow: hidden;
+	color: #e8e5ce;
+	content:none;
+	font-size: 100%;
+	line-height: 0.6;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Colors :
+ * ----------------------------------------------------------------------------
+ */
+
+
+/*
+
+Crimsom red : #eb163e
+Light black : #141412
+Alternate orange : #e6402e
+
+Dodger blue : #0077cf
+Oliver green : #66b115
+
+-- legacy
+dark brown : #220e10
+light broken white : #f7f5e7
+middle broken white : #e8e5ce
+legacy orange : #db572f
+
+
+*/
+
+
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover  {
+	background-color: #141412;
+	color: #fff;
+}
+
+
+.navbar,
+.nav-menu .sub-menu,
+.nav-menu .children,
+ul.nav-menu ul a, 
+.nav-menu ul ul a {
+	background-color: #eb153c;
+	color: #141412;
+}
+
+.format-aside, .format-link,
+.attachment .hentry,
+.paging-navigation,
+.archive-header,
+.page-header,
+.site-footer,
+.error404 .page-wrapper  {
+	background-color: rgba(175,175,175,0.5);
+}
+
+
+.site-footer .sidebar-container {
+	background-color: #141412;
+}
+
+.navigation a ,.navigation a:visited ,
+.format-link .entry-title ,.format-link .entry-title:visited ,
+.entry-meta a,.entry-meta a:visited,
+.entry-content a,.entry-content a:visited,
+.entry-content a,.entry-content a:visited,
+.lab-splash-back-link, .lab-splash-back-link:visited  {	
+	color: #141412;
+}
+
+.site-footer .widget a {
+	color: #0077cf;
+}
+
+.format-link .entry-title a,
+.entry-title a:hover,
+.navigation a:hover,
+.entry-meta a:hover,
+.entry-content a:hover,
+.comment-content a:hover,
+.widget a:hover,
+.lab-splash-back-link:hover  {
+	color: #eb153c;
+	text-decoration: none;
+}
+
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a {
+	color: #141412;
+	font-style: italic;
+}
+
+
+.format-quote {
+	background-color: #210d10;
+}
+
+.format-quote .entry-content,
+.format-quote .entry-meta {
+	color: #f7f5e7;
+}
+
+.format-quote .entry-content a,
+.format-quote .entry-meta a,
+.format-quote .linked {
+	color: #e63f2a;
+}
+
+.format-quote .entry-content cite a {
+	border-bottom: 1px dotted #fff;
+	color: #fff;
+}
+
+.single-format-status .author-description {
+	color: #f7f5e7;
+}
+
+
+.author-link {
+	margin-left: 2px;
+	color: #ca3c08;
+}
+
+
+.wp-caption .wp-caption-text,
+.entry-caption,
+.gallery-caption {
+	color: #220e10;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 18px;
+}
+
+.widget {
+	background-color: transparent;
+}
+
+.widget .lab-meta-container a {
+	background-color: #0077cf ;
+	color: white ;
+}
+
+.widget .lab-meta-container a:hover {
+	background-color: #eb153c;
+	color: white ;
+}
+
+
+/* TODO : other post-format (gallery,chat,audio,video,status) */
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * Font :
+ * ----------------------------------------------------------------------------
+ */
+
+html, button, input, select, textarea {
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.attachment .entry-title  {
+	font-weight: 400;
+	font-family: 'Lobster', cursive;
+}
+
+.front h1{
+	font-size: 550% ;
+}
+
+.format-link .entry-title,
+.author-description .author-title {
+	font: 300 italic 20px "Lato", Helvetica, sans-serif;
+}
+
+.navigation a,
+.widget a,
+.archive-title, .archive-meta,
+.lab-splash-back-link  {
+	font-family: "Lato", Helvetica, sans-serif;
+}
+
+.lab-splash-back-link {
+	
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 0 15px 2px 10px;
+	border-radius: 5px ;
+	background-color: rgba(175,175,175,0.6);
+	font-weight: 300;
+	font-style: italic;
+	
+	font-size: 14px;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Content :
+ * ----------------------------------------------------------------------------
+ */
+
+
+.entry-header,
+.entry-content,
+.entry-summary,
+.entry-meta{
+	max-width: 1040px;
+}
+
+article.post,
+article.page,
+.wpb_wrapper{
+	padding: 0 20px;
+}
+
+h1.entry-title{
+	margin-top: 20px;
+}
+
+.front .widget {
+	padding: 0;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Menus :
+ * ----------------------------------------------------------------------------
+ */
+ 
+.nav-menu .sub-menu, 
+.nav-menu .children {
+	left: 0;
+	border-width: 0;	
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * Widgets :
+ * ----------------------------------------------------------------------------
+ */
+
+.front .lab-meta-container {
+	margin: 0 auto ;
+	width: 350px;
+	text-align: right;
+}
+
+.lab-meta-container li {
+	float: left;
+	margin: 5px ;
+	padding: 0;
+}
+
+.lab-meta-container a {
+	display: block;
+	margin: 0 auto ;
+	padding: 10px;
+	height: auto;
+	border-radius: 21px;
+	font-weight: 300 ;
+}
+
+.lab-meta-admin a,
+.lab-meta-logout a,
+.lab-meta-feed a,
+.lab-meta-comments-feed a,
+.lab-meta-wordpress a {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-size: 0%;
+}
+
+.lab-meta-admin a{
+	background-image: url('images/icons/admin-32.png');
+}
+.lab-meta-logout a{
+	background-image: url('images/icons/exit-32.png');
+}
+.lab-meta-wordpress a{
+	background-image: url('images/icons/wordpress-40.png');
+}
+.lab-meta-feed a{
+	background-image: url('images/icons/feed-28.png');
+}
+.lab-meta-comments-feed a{
+	background-image: url('images/icons/comments-feed-32.png');
+}
