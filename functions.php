@@ -6,11 +6,17 @@
  * @subpackage hec.lab
  * @since lab.mo.01
  */
+
+function lab_version_footer(){
+	return 'Wordpress '.get_bloginfo('version').' - PHP '.phpversion().' &copy; hautencouleur.fr' ;
+}
+
  
 $content_width = 1040;
 
 global $is_customizer_preview ;
 $is_customizer_preview = false ;
+
 
 function lab_is_customizer_preview(){
 	global $is_customizer_preview ;
@@ -46,7 +52,7 @@ function lab_get_home_url(){
 
 function lab_setup_theme(){
 	
-	show_admin_bar( !lab_is_splash() );
+	show_admin_bar( !lab_is_splash() && _get_admin_bar_pref() );
 	
 }
 add_action('after_setup_theme','lab_setup_theme');
@@ -211,5 +217,41 @@ function lab_home_canonical($path){
 	}
 }
 add_filter('redirect_canonical', 'lab_home_canonical');
+
+function lab_entry_meta() {
+
+	$categories_list = get_the_category_list(' ');
+	if ( $categories_list ) {
+		echo '<div class="categories">' . $categories_list . '</div>';
+	}
+
+	$tag_list = get_the_tag_list( '', ' ', '');
+	if ( $tag_list ) {
+		echo '<div class="tags">' . $tag_list . '</div>';
+	}
+	
+	// lab comments link
+	if( comments_open() & ( get_comments_number() > 0 )){
+		//$comments_href = is_single() ? '' : 'href="'.get_comments_link().'"' ;
+		// TODO : jquery jump
+		$comments_href = 'href="'.get_comments_link().'"' ;
+		echo '<a class="lab-meta-comments" '.$comments_href.'>'.get_comments_number().'</a>' ;
+	}
+}
+
+function lab_entry_meta_footer() {
+	if ( 'post' == get_post_type() & is_user_logged_in() ) {
+		printf( '<span>%1$s <time class="entry-date" datetime="%2$s">%3$s</time> %4$s <a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>',
+			__( 'Last edited on'),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_attr( get_the_modified_date() ),
+			__( 'by'),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'twentythirteen' ), get_the_author() ) ),
+			get_the_author()
+		);
+	}
+}
+
 
 ?>

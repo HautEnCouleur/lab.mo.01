@@ -13,8 +13,8 @@
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			
-			<?php if ( ! lab_is_splash()) { get_sidebar( 'main' ); } ?>
-
+			<?php if ( ! lab_is_splash()) {  get_sidebar( 'main' ); } ?>
+		
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 

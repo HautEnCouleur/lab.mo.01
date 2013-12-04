@@ -93,11 +93,14 @@ ul.nav-menu ul a,
 .paging-navigation,
 .archive-header,
 .page-header,
-.site-footer,
 .error404 .page-wrapper  {
 	background-color: rgba(175,175,175,0.5);
 }
 
+.site-footer{
+	background-color: transparent;
+	color: #141412;
+}
 
 .site-footer .sidebar-container {
 	background-color: #141412;
@@ -191,6 +194,33 @@ ul.nav-menu ul a,
 	color: white ;
 }
 
+.entry-meta .categories a,
+.entry-meta .categories a:visited,
+.entry-meta a.lab-meta-comments,
+.entry-meta a.lab-meta-comments:visited {
+	color: white;
+	background-color: #0077cf ;
+}
+
+.entry-meta .categories a:hover,
+.entry-meta a.lab-meta-comments:hover {
+	color: white;
+	background-color: #eb153c;
+}
+
+.entry-meta a.lab-meta-comments,
+.entry-meta a.lab-meta-comments:visited {
+	color: #0077cf;
+}
+
+.entry-meta a.lab-meta-comments:hover {
+	color: #eb153c;
+}
+
+.entry-meta .tags a {
+	background-color: rgba(175,175,175,0.6);
+}
+
 
 /* TODO : other post-format (gallery,chat,audio,video,status) */
 
@@ -228,7 +258,8 @@ h6,
 .navigation a,
 .widget a,
 .archive-title, .archive-meta,
-.lab-splash-back-link  {
+.lab-splash-back-link,
+.entry-meta {
 	font-family: "Lato", Helvetica, sans-serif;
 }
 
@@ -242,8 +273,24 @@ h6,
 	background-color: rgba(175,175,175,0.6);
 	font-weight: 300;
 	font-style: italic;
-	
 	font-size: 14px;
+}
+
+.entry-footer .entry-meta{
+	font-style: italic;
+	color: rgba(0,0,0,0.7); 
+}
+
+.categories a {
+
+}
+
+.tags a {
+	font-style: italic;
+}
+
+.entry-meta a.lab-meta-comments{
+	font: 800 11px "Open Sans", Helvetica, sans-serif;
 }
 
 /**
@@ -257,7 +304,7 @@ h6,
 .entry-content,
 .entry-summary,
 .entry-meta{
-	max-width: 1040px;
+	max-width: 1050px;
 }
 
 article.post,
@@ -266,12 +313,50 @@ article.page,
 	padding: 0 20px;
 }
 
-h1.entry-title{
+.front h1.entry-title{
 	margin-top: 20px;
+}
+
+h1.entry-title{
+	margin-top: 15px;
 }
 
 .front .widget {
 	padding: 0;
+}
+
+.entry-header .entry-title {
+
+}
+
+.entry-header .entry-meta {
+	margin-top: 10px;
+}
+
+
+.entry-meta .categories, .entry-meta .tags{
+	display: inline-block ;
+	margin: 0 3px 0 0;
+}
+
+.entry-meta .categories a, 
+.entry-meta .tags a,
+.entry-meta a.lab-meta-comments {
+	border-radius: 5px;
+	padding: 2px 7px;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.entry-meta a.lab-meta-comments{
+	vertical-align: bottom;
+	text-align: center;
+	padding-top: 4px;
+	height: 25px;
+	width: 34px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url('images/icons/comments-18.png');
 }
 
 /**
@@ -293,38 +378,60 @@ h1.entry-title{
  * ----------------------------------------------------------------------------
  */
 
+.site-footer .widget-area, .sidebar .site-footer {
+	text-align: center;
+}
+
+.site-footer .widget {
+	float: none ;
+	width: auto;
+	margin: 0 auto;
+}
+
 .front .lab-meta-container {
 	margin: 0 auto ;
-	width: 350px;
-	text-align: right;
+	width: 370px;
+	text-align: center;
 }
 
 .lab-meta-container li {
-	float: left;
-	margin: 5px ;
+	margin: 5px auto;
 	padding: 0;
+	width: 210px;
 }
 
 .lab-meta-container a {
 	display: block;
 	margin: 0 auto ;
-	padding: 10px;
+	padding: 4px;
 	height: auto;
 	border-radius: 21px;
-	font-weight: 300 ;
+	font-weight: bold;
+	font-size: 18px;
 }
 
-.lab-meta-admin a,
-.lab-meta-logout a,
-.lab-meta-feed a,
-.lab-meta-comments-feed a,
-.lab-meta-wordpress a {
+li.lab-meta-icon{
 	width: 60px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.lab-meta-icon a {
 	height: 60px;
 	border-radius: 30px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	font-size: 0%;
+	font-weight: inherit;
+	overflow: hidden;
+	
+}
+.lab-meta-icon img {
+	vertical-align: top;
+	height : 100%;
+	width: 100% ;
+	border-radius: 30px;
+	margin: 0;
 }
 
 .lab-meta-admin a{
@@ -332,6 +439,12 @@ h1.entry-title{
 }
 .lab-meta-logout a{
 	background-image: url('images/icons/exit-32.png');
+}
+.lab-meta-profile a{
+	background-image: url('images/icons/business-40.png');
+}
+.lab-meta-edit a{
+		background-image: url('images/icons/edit-alt-40.png');
 }
 .lab-meta-wordpress a{
 	background-image: url('images/icons/wordpress-40.png');
