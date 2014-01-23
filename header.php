@@ -42,10 +42,12 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
 			
+			<?php if (get_option('lab_enable_splash') == 1) : ?>
 			<a class="lab-splash-back-link" href="<?php echo esc_url( home_url() ); ?>">
 					<span class="meta-nav">&larr;</span>
 					<?php _e( 'back to splash screen', 'hec.lab' ); ?>
 			</a>
+			<?php endif; ?>
 			
 			<div id="navbar" class="navbar">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">

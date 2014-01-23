@@ -39,11 +39,10 @@ function lab_is_splash(){
 }
 
 function lab_get_home_url(){
-	$nId = get_option("page_on_front");
-	$sLink = get_permalink($nId);
+	$nId = get_option("page_on_front",0);
 	
-	if($sLink){
-		return $sLink;
+	if( $nId > 0 ){
+		return get_permalink($nId);
 	} else{
 		return home_url('/');
 	}
@@ -74,6 +73,8 @@ function lab_plugins_init(){
 		require_once get_stylesheet_directory() . '/inc/js_composer/vc-config.php';
 		lab_vc_init();
 	}
+	
+	require_once get_stylesheet_directory() . '/inc/flipapart-shortcode.php';
 	
 }
 add_action('widgets_init','lab_plugins_init',100);
@@ -161,7 +162,7 @@ function lab_customize_update_options() {
 	
 	// TODO : options cleaning button
 }
-//add_action( 'customize_preview_init', 'lab_customize_update_options' );	
+add_action( 'customize_preview_init', 'lab_customize_update_options' );	
 
 
 		
@@ -169,12 +170,8 @@ function lab_splash_page_hook($query) {
 	
 	//lab_debug_set(get_option('lab_enable_splash','not found'));
 	
-	if( (get_option('lab_enable_splash') == 1) && !lab_is_customizer_preview() ){
-		
-		if ( lab_is_splash() && $query->is_main_query() ) {
-	        $query->set( 'page_id', get_option('lab_splash_page') );
-	    }
-	    
+	if ( lab_is_splash() && $query->is_main_query() ) {
+		$query->set( 'page_id', get_option('lab_splash_page') );
     }
 }
 add_action( 'pre_get_posts', 'lab_splash_page_hook' );

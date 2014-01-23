@@ -69,6 +69,10 @@ legacy orange : #db572f
 
 */
 
+.format-audio, .format-video {
+	background-color: transparent;
+}
+
 
 .nav-menu li:hover > a,
 .nav-menu li a:hover,
@@ -184,12 +188,14 @@ ul.nav-menu ul a,
 	background-color: transparent;
 }
 
-.widget .lab-meta-container a {
+.widget .lab-meta-container a,
+.lab-meta-profile a img {
 	background-color: #0077cf ;
 	color: white ;
 }
 
-.widget .lab-meta-container a:hover {
+.widget .lab-meta-container a:hover,
+.lab-meta-profile a:hover img {
 	background-color: #eb153c;
 	color: white ;
 }
@@ -202,10 +208,10 @@ ul.nav-menu ul a,
 	background-color: #0077cf ;
 }
 
-.entry-meta .categories a:hover,
-.entry-meta a.lab-meta-comments:hover {
-	color: white;
-	background-color: #eb153c;
+.entry-meta .tags a,
+.entry-meta .tags a:visited {
+	color: #141412;
+	background-color: rgba(175,175,175,0.6);
 }
 
 .entry-meta a.lab-meta-comments,
@@ -213,13 +219,19 @@ ul.nav-menu ul a,
 	color: #0077cf;
 }
 
+.entry-meta .categories a:hover,
+.entry-meta a.lab-meta-comments:hover,
+.entry-meta .tags a:hover {
+	color: white;
+	background-color: #eb153c;
+}
+
+
 .entry-meta a.lab-meta-comments:hover {
 	color: #eb153c;
 }
 
-.entry-meta .tags a {
-	background-color: rgba(175,175,175,0.6);
-}
+
 
 
 /* TODO : other post-format (gallery,chat,audio,video,status) */
